@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.talosforensics.agent</string>
+    <key>CFBundleName</key>
+    <string>TalosAgent</string>
+    <key>CFBundleDisplayName</key>
+    <string>Talos Agent</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleExecutable</key>
+    <string>TalosAgent</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>UIMainStoryboardFile</key>
+    <string></string>
+    <key>UIApplicationSceneManifest</key>
+    <dict/>
+    <key>MinimumOSVersion</key>
+    <string>14.0</string>
+
+    <!-- Required permissions -->
+    <key>NSContactsUsageDescription</key>
+    <string>Talos Forensics Agent needs access to contacts for forensic extraction.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Talos Forensics Agent needs access to photos for forensic extraction.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Talos Forensics Agent needs camera access for screenshot capture.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Talos Forensics Agent may need microphone access for audio extraction.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Talos Forensics Agent needs location for device information.</string>
+
+    <!-- Background modes to keep server alive -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+        <string>processing</string>
+        <string>audio</string>
+    </array>
+
+    <!-- URL schemes for app detection -->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>whatsapp</string>
+        <string>tg</string>
+        <string>sgnl</string>
+        <string>instagram</string>
+        <string>fb</string>
+        <string>twitter</string>
+        <string>snapchat</string>
+        <string>spotify</string>
+    </array>
+
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+
+    <!-- Allow local networking -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsLocalNetworking</key>
+        <true/>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+
+    <!-- Bonjour for USB tunnel discovery -->
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_talosagent._tcp</string>
+    </array>
+</dict>
+</plist>
